@@ -11,31 +11,27 @@ async function traedatos() {
         const respuestas = await fetch("http://localhost:3000/api/task")
         let traedatos = await respuestas.json()
         console.log(traedatos)
-        traedatos.forEach(variable => {
-            let li = document.createElement("li")
-            li.textContent = variable.nombre
-            listaTareas.appendChild(li)
 
+        traedatos.forEach(variable => {
+            let p = document.createElement("p")
+            let div = document.createElement("div")
+            let checkbox = document.createElement("input")
+            checkbox.type = "checkbox"
+            p.appendChild(checkbox)
+            p.textContent = variable.nombre
+            div.appendChild(p)
+            div.appendChild(checkbox)
+            checkbox.classList.add("")
+            listaTareas.appendChild(div)
         });
+        
     } catch (error) {
         console.error(error);
-
     }
-
-    let checkBox = document.getElementById("divInput")
-    let check = () => {
-        let div = document.createElement("div")
-        let p = document.createElement("p")
-        let box = document.createElement("input")
-        box.type = "checkbox"
-        p.innerHTML = "ffff"
-        div.appendChild(p)
-        div.appendChild(box)
-        checkBox.appendChild(div)
-    }
-    
 }
 
+
+ 
 //POST
 async function darDatos() {
     try {
