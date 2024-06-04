@@ -4,7 +4,6 @@ let listaTareas = document.getElementById("listaTareas")
 let int = document.getElementById("int")
 
 
-
 //GET
 async function traedatos() {
     try {
@@ -24,14 +23,13 @@ async function traedatos() {
             checkbox.classList.add("")
             listaTareas.appendChild(div)
         });
-        
+
     } catch (error) {
         console.error(error);
     }
 }
-
-
  
+
 //POST
 async function darDatos() {
     try {
@@ -48,6 +46,7 @@ async function darDatos() {
             body: JSON.stringify(tarea)
 
         })
+        
         const data = await respuesta.json()
         console.log(data);
         console.log(`Se creo la tarea ${tarea.nombre}`)
