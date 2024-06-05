@@ -57,6 +57,7 @@ async function darDatos() {
 
 btnAgg.addEventListener("click", () => {
     darDatos()
+    console.log("dsadas");
 })
 
 
