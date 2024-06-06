@@ -1,15 +1,14 @@
 let btnAgg = document.getElementById("btnAgg")
 let listaTareas = document.getElementById("listaTareas")
 let int = document.getElementById("int")
+let container = document.getElementById("int2")
+let inputTask = document.getElementById("line")
 
-
-//Contador
-let p = document.createElement("p")
-p.type = "p"
-p.innerHTML = "cont"
-let cont = document.createElement("div")
-div.appendChild(cont)
-p.appendChild(p)
+inputTask.addEventListener("Keydowm",(e)=>{
+    if (e.key=="Enter"){
+        darDatos()
+    }
+})
 
 //GET
 async function traedatos() {
@@ -21,8 +20,6 @@ async function traedatos() {
         console.log(traedatos)
 
         traedatos.forEach(variable => {
-
-
             //Agrega el Checbox a cada tarea
             let p = document.createElement("p")
 
@@ -51,8 +48,15 @@ async function traedatos() {
             button.addEventListener("click", () => {
                 eliminarTarea(variable.id)
             })
-
-        });
+            checkbox.addEventListener("click", () => {
+                if (checkbox.checked == true) {
+                    upCheckList(variable.id)
+                    container.value++
+                } else {
+                    container.value--
+                }
+            });
+        })
 
     } catch (error) {
         console.error(error);
@@ -81,7 +85,6 @@ async function eliminarTarea(id) {
     }
 }
 
-
 //POST
 async function darDatos() {
     try {
@@ -108,6 +111,26 @@ btnAgg.addEventListener("click", () => {
     darDatos()
     console.log("dsadas");
 })
+
+//put
+async function upCheckList(id) {
+    try {
+        let task = {
+            estado: true
+        }
+        const answer = await fetch(`http://localhost:3000/api/task/${id}`, {
+            method: "PUT",
+            headers: {
+                "Content-type": "application/json"
+            },
+            body: JSON.stringify(task)
+        })
+        let data = await answer.json()
+        console.log(data)
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 traedatos()
 

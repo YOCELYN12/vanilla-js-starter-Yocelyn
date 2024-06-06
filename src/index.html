@@ -4,26 +4,53 @@
 <head>
 	<title>Ejemplo básico</title>
 	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="./CSS/css.css">
 </head>
 
 <body>
-	
+
 	<h1>La aplicación esta corriendo!!!!</h1>
 
 	<form action="">
-		<div>
-			<label for="tareas">Tareas pendientes</label>
-			<input id="int" type="text">
-			<input type="button" id="btnAgg" value="Agregar">
-		</div>
+
+
+
 		
+
+
+
+		<div class="contenedorPadre">
+
+			<div class="tar">
+				<label for="tareas">Tareas pendientes</label>
+			</div>
+
+			<div class="INPUT">
+				<input id="int" type="text">
+			</div>
+
+			<div class="btn">
+				<input type="button" id="btnAgg" value="Agregar">
+			</div>
+
+			<div class="contenedor"></div>
+			
+			<div class="contador">
+				<input id="int2" type="number">
+			</div>
+
+		</div>
+
+
+
+
+
 	</form>
 
 	<div id="listaTareas"></div>
-	
 
-	
+
+
 
 
 	<script src="/src/JS/index.js" type="module"></script>

@@ -1,0 +1,59 @@
+/*Circulo que contiene el contador*/
+#int2 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: right;
+}
+
+/*Estilos para el contenedor que tiene al otro contenedor*/
+.contenedorPadre {
+    width: 1000px;
+    height: 680px;
+    background-color: beige;
+    position: absolute;
+    top: 8%;
+    left: 17%;
+
+}
+
+/*El otro contenedor*/
+.contenedor {
+    width: 850px;
+    height: 480px;
+    background-color: rgba(158, 168, 208, 0.571);
+    position: absolute;
+    left: 8%;
+    top: 27%;
+}
+
+.tar {
+    position: relative;
+    left: 40%;
+    top: 3%;
+    font-family: cursive;
+    font-size: 25px;
+}
+
+.INPUT {
+    position: absolute;
+    top: 12%;
+    left: 5%;
+}
+
+.btn{
+    position: absolute;
+    top: 17%;
+    left: 8%;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+
+.contador{
+  position: absolute;
+  top: 10%;
+  left: 85%;
+}
