@@ -2,16 +2,17 @@ let btnAgg = document.getElementById("btnAgg")
 let listaTareas = document.getElementById("listaTareas")
 let int = document.getElementById("int")
 let container = document.getElementById("int2")
-let inputTask = document.getElementById("line")
+import { darDatos } from "./post.js";
 
-inputTask.addEventListener("Keydowm",(e)=>{
-    if (e.key=="Enter"){
+int.addEventListener("keydown",(e)=>{
+    if (e.key=="Enter" && int.value!==""){
+        alert("ingrese un texto")
         darDatos()
     }
 })
 
 //GET
-async function traedatos() {
+export async function traedatos() {
     try {
         //Trae los datos del API
         listaTareas.innerHTML = ""
@@ -23,6 +24,7 @@ async function traedatos() {
             //Agrega el Checbox a cada tarea
             let p = document.createElement("p")
 
+            p.classList.add("parrafo")
             //Agrega la tarea ingresada en el input 
             p.textContent = variable.nombre
 
@@ -32,9 +34,9 @@ async function traedatos() {
             checkbox.type = "checkbox"
             p.appendChild(checkbox)
             div.appendChild(p)
-            div.appendChild(checkbox)
             listaTareas.appendChild(div)
-            // checkbox.classList.add("")
+
+            
 
             //Boton de eliminar, que se agrega a cada tarea
             let button = document.createElement("button")
@@ -56,13 +58,15 @@ async function traedatos() {
                     container.value--
                 }
             });
-        })
-
+        })       
     } catch (error) {
         console.error(error);
     }
 }
 
+
+
+//POST Eliminar tarea
 async function eliminarTarea(id) {
     try {
         const eliminarTarea = await fetch(`http://localhost:3000/api/task/${id}`, {
@@ -85,31 +89,16 @@ async function eliminarTarea(id) {
     }
 }
 
-//POST
-async function darDatos() {
-    try {
-        let tarea = {
-            nombre: int.value,
-            estado: false,
-        }
-        const respuesta = await fetch("http://localhost:3000/api/task", {
-            method: "POST",
-            headers: {
-                "Content-type": "application/json; charset=UTF-8"
-            },
-            body: JSON.stringify(tarea)
-        })
-        const data = await respuesta.json()
-        console.log(data);
-        console.log(`Se creo la tarea ${tarea.nombre}`)
-        traedatos()
-    } catch (error) {
-    }
-}
+
 
 btnAgg.addEventListener("click", () => {
-    darDatos()
-    console.log("dsadas");
+    if(int.value!== ""){
+        alert("The task was added successfully")
+        darDatos()
+    }
+    else (
+        alert("ingrese un texto")
+    )
 })
 
 //put
@@ -131,7 +120,6 @@ async function upCheckList(id) {
         console.log(error);
     }
 }
-
 traedatos()
 
 

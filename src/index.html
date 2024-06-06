@@ -9,49 +9,39 @@
 
 <body>
 
-	<h1>La aplicación esta corriendo!!!!</h1>
+	<main>
 
 	<form action="">
 
 
 
-		
-
-
-
+		<!--Contenedor padre-->
 		<div class="contenedorPadre">
 
+			<!--Etiqueta de tareas-->
 			<div class="tar">
 				<label for="tareas">Tareas pendientes</label>
 			</div>
 
-			<div class="INPUT">
-				<input id="int" type="text">
+			<!--Contenedor para el input-->
+			<div class="contenedorInput">
+				<div class="INPUT">
+					<input id="int" type="text">
+					<input type="button" id="btnAgg" value="Agregar">
+				</div>
+				<div>
+					<input id="int2" type="number">
+				</div>
 			</div>
-
-			<div class="btn">
-				<input type="button" id="btnAgg" value="Agregar">
-			</div>
-
-			<div class="contenedor"></div>
 			
-			<div class="contador">
-				<input id="int2" type="number">
+		    <div class="Lista" id="listaTareas">
+
 			</div>
 
 		</div>
-
-
-
-
-
+		
 	</form>
-
-	<div id="listaTareas"></div>
-
-
-
-
+	</main>
 
 	<script src="/src/JS/index.js" type="module"></script>
 </body>
