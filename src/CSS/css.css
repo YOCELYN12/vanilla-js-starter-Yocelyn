@@ -1,0 +1,55 @@
+/*Circulo que contiene el contador*/
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+main{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1000px;
+    
+}
+#int2 {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.INPUT{
+    display: grid;
+    grid-template-columns: auto;
+}
+/*Estilos para el contenedor que tiene al otro contenedor*/
+
+.contenedorInput{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 700px;
+}
+/*El otro contenedor*/
+
+.tar {
+    text-align: center;
+    font-family: cursive;
+    font-size: 25px;
+}
+
+
+
+.parrafo{
+border: 1px solid black;
+padding: 5px;
+margin: 10px;
+}
+
+.Lista{
+    margin-top: 30px;
+    min-height: 400px;
+    border: 1px solid black;
+}
+
+.noHayTareas{
+    text-align: center;
+}

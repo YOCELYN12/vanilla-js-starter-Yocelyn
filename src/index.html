@@ -4,27 +4,45 @@
 <head>
 	<title>Ejemplo básico</title>
 	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+	<link rel="stylesheet" href="./CSS/css.css">
 </head>
 
 <body>
-	
+
+	<main>
 
 	<form action="">
 
-		<div>
-			<label for="tareas">Tareas pendientes</label>
-			<input id="int" type="text">
-			<input type="button" id="btnAgg" value="Agregar">
+
+
+		<!--Contenedor padre-->
+		<div class="contenedorPadre">
+
+			<!--Etiqueta de tareas-->
+			<div class="tar">
+				<label for="tareas">Tareas pendientes</label>
+			</div>
+
+			<!--Contenedor para el input-->
+			<div class="contenedorInput">
+				<div class="INPUT">
+					<input id="int" type="text">
+					<input type="button" id="btnAgg" value="Agregar">
+				</div>
+				<div>
+					<input id="int2" type="number">
+				</div>
+			</div>
+			
+		    <div class="Lista" id="listaTareas">
+
+			</div>
+
 		</div>
+		
 	</form>
+	</main>
 
-	<div id="listaTareas"></div>
-
-	<span class="material-symbols-outlined">
-		delete_forever
-    </span>
-	
 	<script src="/src/JS/index.js" type="module"></script>
 </body>
 
