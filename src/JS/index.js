@@ -4,8 +4,8 @@ let int = document.getElementById("int")
 let container = document.getElementById("int2")
 import { darDatos } from "./post.js";
 
-int.addEventListener("keydown",(e)=>{
-    if (e.key=="Enter" && int.value!==""){
+int.addEventListener("keydown", (e) => {
+    if (e.key == "Enter" && int.value !== "") {
         alert("ingrese un texto")
         darDatos()
     }
@@ -19,6 +19,8 @@ export async function traedatos() {
         const respuestas = await fetch("http://localhost:3000/api/task")
         let traedatos = await respuestas.json()
         console.log(traedatos)
+
+        validarTexto()
 
         traedatos.forEach(variable => {
             //Agrega el Checbox a cada tarea
@@ -36,7 +38,7 @@ export async function traedatos() {
             div.appendChild(p)
             listaTareas.appendChild(div)
 
-            
+
 
             //Boton de eliminar, que se agrega a cada tarea
             let button = document.createElement("button")
@@ -50,6 +52,8 @@ export async function traedatos() {
             button.addEventListener("click", () => {
                 eliminarTarea(variable.id)
             })
+
+            //Evento de checkbox para el contador 
             checkbox.addEventListener("click", () => {
                 if (checkbox.checked == true) {
                     upCheckList(variable.id)
@@ -58,12 +62,29 @@ export async function traedatos() {
                     container.value--
                 }
             });
-        })       
+
+        })
+
     } catch (error) {
         console.error(error);
     }
 }
 
+function validarTexto() {
+    let texto = Array.from(traedatos)
+    if (texto.length == 0) {
+        console.log("NO HAY TAREAS")
+        let p = document.getElementById("nd")
+        p.style.display = "block"
+        p.classList.add("sev")
+    } else {
+        console.log("SI HAY TAREA")
+        /*let p = document.getElementById("nn")
+        p.classList.add("sev")*/
+        parrafo.style.display = "none"
+    }
+
+}
 
 
 //POST Eliminar tarea
@@ -92,7 +113,7 @@ async function eliminarTarea(id) {
 
 
 btnAgg.addEventListener("click", () => {
-    if(int.value!== ""){
+    if (int.value !== "") {
         alert("The task was added successfully")
         darDatos()
     }

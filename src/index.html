@@ -4,44 +4,50 @@
 <head>
 	<title>Ejemplo básico</title>
 	<meta charset="UTF-8" />
-	<link rel="stylesheet" href="./CSS/css.css">
+	<link rel="stylesheet" href="/src/CSS/css.css">
 </head>
 
 <body>
 
 	<main>
 
-	<form action="">
-
-
-
-		<!--Contenedor padre-->
-		<div class="contenedorPadre">
-
+		<form action="">
 			<!--Etiqueta de tareas-->
 			<div class="tar">
-				<label for="tareas">Tareas pendientes</label>
+				<label for="tareas" class="tare">Tareas pendientes</label>
 			</div>
 
-			<!--Contenedor para el input-->
 			<div class="contenedorInput">
 				<div class="INPUT">
-					<input id="int" type="text">
-					<input type="button" id="btnAgg" value="Agregar">
+					<input class="int" id="int" type="text">
+					<input class="btn" type="button" id="btnAgg" value="Agregar">
 				</div>
 				<div>
 					<input id="int2" type="number">
 				</div>
 			</div>
-			
-		    <div class="Lista" id="listaTareas">
+			<!--Contenedor padre-->
+
+			<div class="contenedorPadre">
+
+				<p id="nd" class="nd">No hay tareas</p>
+
+				<!--<p id="nn" class="nd">Si hay tareas</p> -->
+
+				
+
+				<!--Contenedor para el input-->
+				
+
+				<div class="Lista" id="listaTareas">
+
+				</div>
 
 			</div>
 
-		</div>
-		
-	</form>
+		</form>
 	</main>
+
 
 	<script src="/src/JS/index.js" type="module"></script>
 </body>
