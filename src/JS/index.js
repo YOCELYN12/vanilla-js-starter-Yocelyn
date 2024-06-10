@@ -1,6 +1,7 @@
 let btnAgg = document.getElementById("btnAgg")
 let listaTareas = document.getElementById("listaTareas")
 let int = document.getElementById("int")
+let parrafo = document.getElementById("nn")
 let container = document.getElementById("int2")
 import { darDatos } from "./post.js";
 
@@ -18,7 +19,19 @@ export async function traedatos() {
         listaTareas.innerHTML = ""
         const respuestas = await fetch("http://localhost:3000/api/task")
         let traedatos = await respuestas.json()
+        let datos = Array.from(traedatos)
+        if (datos.length == 0) {
+            console.log("No hay tareas")
+            parrafo.style.display = "block"
+            parrafo.setAttribute("class", "seVe")
+
+        } else {
+            console.log("Si hay tareas")
+            parrafo.style.display = "none"
+
+        }
         console.log(traedatos)
+
 
         //validarTexto()
         traedatos.forEach(variable => {
@@ -56,13 +69,13 @@ export async function traedatos() {
                     upCheckList(variable.id)
                     container.value++
                 } else {
-                    container.value--
+                    container.value
                 }
             });
         })
 
     } catch (error) {
-        console.error(error);
+        console.log(error);
     }
 }
 
