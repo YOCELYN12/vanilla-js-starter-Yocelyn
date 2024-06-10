@@ -20,13 +20,12 @@ export async function traedatos() {
         let traedatos = await respuestas.json()
         console.log(traedatos)
 
-        validarTexto()
-
+        //validarTexto()
         traedatos.forEach(variable => {
             //Agrega el Checbox a cada tarea
             let p = document.createElement("p")
-
             p.classList.add("parrafo")
+
             //Agrega la tarea ingresada en el input 
             p.textContent = variable.nombre
 
@@ -37,8 +36,6 @@ export async function traedatos() {
             p.appendChild(checkbox)
             div.appendChild(p)
             listaTareas.appendChild(div)
-
-
 
             //Boton de eliminar, que se agrega a cada tarea
             let button = document.createElement("button")
@@ -62,28 +59,11 @@ export async function traedatos() {
                     container.value--
                 }
             });
-
         })
 
     } catch (error) {
         console.error(error);
     }
-}
-
-function validarTexto() {
-    let texto = Array.from(traedatos)
-    if (texto.length == 0) {
-        console.log("NO HAY TAREAS")
-        let p = document.getElementById("nd")
-        p.style.display = "block"
-        p.classList.add("sev")
-    } else {
-        console.log("SI HAY TAREA")
-        /*let p = document.getElementById("nn")
-        p.classList.add("sev")*/
-        parrafo.style.display = "none"
-    }
-
 }
 
 
