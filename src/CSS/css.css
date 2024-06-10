@@ -29,7 +29,7 @@ main{
 .INPUT{
     display: grid;
     grid-template-columns: auto;
-    background-color:  transparent);
+    background-color:  transparent;
 }
 
 .int{
