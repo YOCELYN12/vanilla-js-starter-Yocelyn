@@ -2,9 +2,9 @@
   "name": "vanilla-js",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "RegistroFun.js",
   "scripts": {
-    "start": "parcel serve src/index.html --open",
+    "start": "parcel serve src/practica/registro.html --open",
     "test": "jest"
   },
   "keywords": [],
