@@ -1,5 +1,4 @@
 //POST
-
 import { traedatos } from ".";
 async function darDatos() {
     try {

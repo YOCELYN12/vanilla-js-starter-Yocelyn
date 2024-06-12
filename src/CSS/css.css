@@ -29,9 +29,8 @@ main{
 .INPUT{
     display: grid;
     grid-template-columns: auto;
-    background-color:  transparent);
+    background-color:  transparent;
 }
-
 .int{
     background-color: rgba(0, 0, 0, 0);
     color: aliceblue;
@@ -53,8 +52,6 @@ main{
     align-items: center;
     justify-content: space-between;
     width: 700px;
-    
-    
 }
 
 .contenedorPadre{
@@ -92,3 +89,5 @@ margin: 10px;
     color: aliceblue;
     font-size: 20px;
 }
+
+

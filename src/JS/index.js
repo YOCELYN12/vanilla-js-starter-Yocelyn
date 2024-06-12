@@ -1,10 +1,12 @@
-let btnAgg = document.getElementById("btnAgg")
-let listaTareas = document.getElementById("listaTareas")
-let int = document.getElementById("int")
-let parrafo = document.getElementById("nn")
-let container = document.getElementById("int2")
+let btnAgg = document.getElementById("btnAgg") //Variable para el boton de agregar
+let listaTareas = document.getElementById("listaTareas") //variable para las tareas
+let int = document.getElementById("int") // variable para mi input
+let parrafo = document.getElementById("nn") //variable para mostrar si hay tareas o no 
+let container = document.getElementById("int2") 
+
 import { darDatos } from "./post.js";
 
+//Para que al tocar la tecla enter, se guarde la tarea
 int.addEventListener("keydown", (e) => {
     if (e.key == "Enter" && int.value !== "") {
         alert("ingrese un texto")
@@ -13,13 +15,14 @@ int.addEventListener("keydown", (e) => {
 })
 
 //GET
-export async function traedatos() {
+export async function traedatos(){
     try {
         //Trae los datos del API
         listaTareas.innerHTML = ""
         const respuestas = await fetch("http://localhost:3000/api/task")
         let traedatos = await respuestas.json()
         let datos = Array.from(traedatos)
+        
         if (datos.length == 0) {
             console.log("No hay tareas")
             parrafo.style.display = "block"
@@ -80,7 +83,7 @@ export async function traedatos() {
 }
 
 
-//POST Eliminar tarea
+//Eliminar tarea
 async function eliminarTarea(id) {
     try {
         const eliminarTarea = await fetch(`http://localhost:3000/api/task/${id}`, {
@@ -104,14 +107,14 @@ async function eliminarTarea(id) {
 }
 
 
-
+//Boton para agregar la tarea
 btnAgg.addEventListener("click", () => {
-    if (int.value !== "") {
+    if (int.value.trim() !== "") {
         alert("The task was added successfully")
         darDatos()
     }
     else (
-        alert("ingrese un texto")
+        alert("enter a text")
     )
 })
 
@@ -134,7 +137,9 @@ async function upCheckList(id) {
         console.log(error);
     }
 }
-traedatos()
+
+
+traedatos()//funcion traedatos
 
 
 

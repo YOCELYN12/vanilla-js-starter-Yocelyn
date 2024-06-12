@@ -17,33 +17,37 @@
 				<label for="tareas" class="tare">Tareas pendientes</label>
 			</div>
 
+			<!--Contedor para las etiquetas-->
 			<div class="contenedorInput">
-
+                <!---->
 				<div class="INPUT">
+					<!--Input para ingregar las tareas-->
 					<input class="int" id="int" type="text">
+
+					<!--Boton para agregar la tarea-->
 					<input class="btn" type="button" id="btnAgg" value="Agregar">
 				</div>
 
+
+				<!--Contador, para las tareas-->
 				<div>
 					<input id="int2" type="number">
 				</div>
 
 			</div>
 
-			<!--<p id="nd" class="nd">No hay tareas</p>-->
-			<!--Contenedor padre-->
 
+			<!--Contenedor padre-->
 			<div class="contenedorPadre">
 
-				<p id="nn" class="nd">No hay tareas</p>
-
-				<!--Contenedor para el input-->
-			
-				<div class="Lista" id="listaTareas">
-
+                <!--Etiqueta que muestra si hay tareas o no-->
+				
+				<p style="color: #f5f3f3fe; font-size: 20px; position: absolute; top: 40%; left: 45%; font-family: cursive;" id="nn" class="nd">No hay tareas</p>
+				
+				<!--Contenedor para las tareas-->
+				<div class="Lista" id="listaTareas"></div>
+				
 				</div>
-
-			</div>
 
 		</form>
 	</main>
